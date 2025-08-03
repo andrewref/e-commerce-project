@@ -1,0 +1,15 @@
+.card-img-top {
+  height: 220px;
+  object-fit: contain;
+  padding: 10px;
+  background-color: #f9f9f9; 
+  border-bottom: 1px solid #eee;
+}
+body{
+  background: linear-gradient(to right, #CCCCFF , white)
+}
+.card{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 16px;
+}

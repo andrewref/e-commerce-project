@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to MyShop</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">MyShop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center gap-2">
+          <!-- Shop Products -->
+          <li class="nav-item">
+            <a class="btn btn-outline-primary" href="products/products.html">Shop Products</a>
+          </li>
+
+          <!-- Cart -->
+          <li class="nav-item d-none" id="nav-cart-wrap">
+            <a class="btn btn-outline-info" href="cart/cart.html">Cart</a>
+          </li>
+
+          <!-- Admin -->
+          <li class="nav-item d-none" id="nav-admin-wrap">
+            <a class="btn btn-outline-warning" href="admin/admin.html">Admin Panel</a>
+          </li>
+
+          <!-- Auth / Logout -->
+          <li class="nav-item" id="nav-auth-wrap">
+            <a class="btn btn-outline-success" href="auth/auth.html">Login</a>
+          </li>
+          <li class="nav-item d-none" id="nav-logout-wrap">
+            <button class="btn btn-outline-danger" id="nav-logout">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Welcome Section -->
+  <div class="container text-center mt-5">
+    <h1 class="display-4 fw-bold">Welcome to MyShop!</h1>
+    <p class="lead">Your one-stop shop for fashion, electronics, and more.</p>
+    <a href="products/products.html" class="btn btn-lg btn-primary mt-3">Start Shopping</a>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Dynamic Navbar Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = JSON.parse(localStorage.getItem('currentUser'));
+
+      const navAuthWrap = document.getElementById('nav-auth-wrap');
+      const navLogoutWrap = document.getElementById('nav-logout-wrap');
+      const navCartWrap = document.getElementById('nav-cart-wrap');
+      const navAdminWrap = document.getElementById('nav-admin-wrap');
+      const navLogoutBtn = document.getElementById('nav-logout');
+
+      if (user) {
+        navAuthWrap.classList.add('d-none');
+        navLogoutWrap.classList.remove('d-none');
+        navCartWrap.classList.remove('d-none');
+
+        if (user.isAdmin) {
+          navAdminWrap.classList.remove('d-none');
+        }
+
+        navLogoutBtn.addEventListener('click', () => {
+          localStorage.removeItem('currentUser');
+          window.location.reload();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

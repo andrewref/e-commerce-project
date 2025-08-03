@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Auth | MyShop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="auth.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">MyShop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navContent">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a href="../products/products.html" class="btn btn-outline-primary">Products</a></li>
+          <li class="nav-item"><a href="../admin/admin.html" id="btn-admin" class="btn btn-outline-warning d-none">Admin Dashboard</a></li>
+          <li class="nav-item"><button id="btn-logout" class="btn btn-outline-danger d-none">Logout</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Welcome / Auth Toggle Buttons -->
+  <div class="text-center mb-4">
+    <h2 id="welcome-msg" class="mb-3 d-none"></h2>
+    <button id="btn-login" class="btn btn-success me-2">Login</button>
+    <button id="btn-signup" class="btn btn-secondary">Sign Up</button>
+  </div>
+
+  <!-- Forms Section -->
+  <div class="container" id="forms">
+    <div class="row justify-content-center">
+      <!-- Signup -->
+      <div class="col-md-6 card p-4 mb-4" id="signup-card">
+        <h3 class="text-center mb-3">Create Account</h3>
+        <form id="signup-form" novalidate>
+          <div class="mb-3">
+            <label for="signup-username" class="form-label">Username</label>
+            <input type="text" id="signup-username" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="signup-email" class="form-label">Email</label>
+            <input type="email" id="signup-email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="signup-password" class="form-label">Password</label>
+            <input type="password" id="signup-password" class="form-control" required minlength="6" />
+          </div>
+          <div class="mb-3">
+            <label for="signup-admin-code" class="form-label">Admin Code (optional)</label>
+            <input type="password" id="signup-admin-code" class="form-control" placeholder="Only admins should fill this" />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        </form>
+      </div>
+
+      <!-- Login -->
+      <div class="col-md-6 card p-4 mb-4" id="login-card">
+        <h3 class="text-center mb-3">Login</h3>
+        <form id="login-form" novalidate>
+          <div class="mb-3">
+            <label for="login-username" class="form-label">Username or Email</label>
+            <input type="text" id="login-username" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="login-password" class="form-label">Password</label>
+            <input type="password" id="login-password" class="form-control" required />
+          </div>
+          <button type="submit" class="btn btn-success w-100">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Protected Section -->
+  <div class="container d-none" id="protected">
+    <div class="card p-4 text-center">
+      <h4>You're logged in!</h4>
+      <p>Welcome to the secure area of MyShop.</p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

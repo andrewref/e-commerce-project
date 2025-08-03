@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+
+  <!-- Local Bootstrap -->
+  <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MyShop</a>
+      <div class="d-flex">
+        <a href="../products/products.html" class="btn btn-outline-primary me-2">Products</a>
+        <a href="admin.html" class="btn btn-outline-warning me-2">Admin</a>
+        <a href="../auth/auth.html" class="btn btn-outline-secondary">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard -->
+  <div class="container my-4">
+    <h2 id="welcomeMsg" class="mb-4">Welcome</h2>
+    <button id="placeOrderBtn" class="btn btn-success mb-4">Place Test Order</button>
+    <div id="ordersContainer" class="row gy-4"></div>
+
+    <div id="adminDashboard" class="mt-5 d-none">
+      <h3>Admin Dashboard</h3>
+      <div class="row text-center mt-3">
+        <div class="col-md-3">
+          <div class="card"><div class="card-body"><h5>Total Users</h5><p id="totalUsers" class="fs-4 fw-bold">0</p></div></div>
+        </div>
+        <div class="col-md-3">
+          <div class="card"><div class="card-body"><h5>Total Products</h5><p id="totalProducts" class="fs-4 fw-bold">0</p></div></div>
+        </div>
+        <div class="col-md-3">
+          <div class="card"><div class="card-body"><h5>Total Orders</h5><p id="totalOrders" class="fs-4 fw-bold">0</p></div></div>
+        </div>
+        <div class="col-md-3">
+          <div class="card"><div class="card-body"><h5>Total Sales</h5><p id="totalSales" class="fs-4 fw-bold">$0.00</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Management -->
+  <div id="productManagement" class="container mt-5 d-none">
+    <h3>Product Management</h3>
+    <form id="addProductForm" class="row g-3 mb-4">
+      <div class="col-md-3"><input type="text" id="productTitle" class="form-control" placeholder="Title" required /></div>
+      <div class="col-md-2"><input type="number" id="productPrice" class="form-control" placeholder="Price" required /></div>
+      <div class="col-md-2"><input type="text" id="productCategory" class="form-control" placeholder="Category" required /></div>
+      <div class="col-md-3"><input type="text" id="productImage" class="form-control" placeholder="Image URL" required /></div>
+      <div class="col-md-2"><button class="btn btn-success w-100" type="submit">Add Product</button></div>
+    </form>
+    <div id="adminProductList" class="row gy-4"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

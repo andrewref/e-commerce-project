@@ -1,0 +1,30 @@
+
+.glass-search{
+     background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  color: #333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+body{
+  background: linear-gradient(to right, #CCCCFF , white)
+}
+button 
+{
+  background: linear-gradient(to right, #CCCCFF , #D8BFD8);
+  
+}
+.card-body {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 16px;
+}
+.card{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
